@@ -16,18 +16,6 @@ The goals / steps of this project are the following:
 * Analyze the softmax probabilities of the new images
 * Summarize the results with a written report
 
-
-[//]: # (Image References)
-
-[image1]: ./examples/visualization.jpg "Visualization"
-[image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
-
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
@@ -133,11 +121,11 @@ During training, the validation accuracy stopped increasing at around 96%. This 
 
 Here are five German traffic signs that I found on the web:
 
-![](german_traffic_signs/traffic_sign_1.jpg?raw=true)
-![](german_traffic_signs/traffic_sign_2.jpg?raw=true)
-![](german_traffic_signs/traffic_sign_3.jpg?raw=true)
-![](german_traffic_signs/traffic_sign_4.jpg?raw=true)
-![](german_traffic_signs/traffic_sign_5.jpg?raw=true)
+<img src="german_traffic_signs/traffic_sign_1.jpg?raw=true" width="50">
+<img src="german_traffic_signs/traffic_sign_2.jpg?raw=true" width="50">
+<img src="german_traffic_signs/traffic_sign_3.jpg?raw=true" width="50">
+<img src="german_traffic_signs/traffic_sign_4.jpg?raw=true" width="50">
+<img src="german_traffic_signs/traffic_sign_5.jpg?raw=true" width="50">
 
 Image 4 is the only one that has dim lighting since it seems that it was taken
 at dusk. The other images each appear to be relatively easy to classify since
