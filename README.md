@@ -30,12 +30,12 @@ You're reading it!
 
 #### 1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
 
-I used the pandas library to calculate summary statistics of the traffic
+I used the python to calculate summary statistics of the traffic
 signs data set:
 
-* The size of training set is **34799**
+* The size of the training set is **34799**
 * The size of the validation set is **4410**
-* The size of test set is **12630**
+* The size of the test set is **12630**
 * The shape of a traffic sign image is **(32, 32, 3)**
 * The number of unique classes/labels in the data set is **43**
 
@@ -102,8 +102,7 @@ My final model consisted of the following layers:
 
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-To train the model, I used a learning rate of 0.001 with a batch size of 256 and
-50 epochs. I also used a keep probability of .5.
+To train the model, I used a learning rate of 0.001 with a batch size of 256 and a keep probability of .5. I also used the AdamOptimizer and trained for 50 epochs.
 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
@@ -149,7 +148,7 @@ The model was able to correctly guess 5 of the 5 traffic signs, which gives an a
 
 The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
 
-The model was very sure for each image prediction. The first three output a probability of "1.00000000e+00" so I'm not sure of the exact value for these, but it is slightly smaller than 1. For the last two images, the top probabilities were both around .99.
+The model was very sure for each image prediction. The first three had a top probability so close to 1 that it simply output "1.00000000e+00". For the last two images, the top probabilities were both around .99.
 
 Here's the top 5 probabilities for each image in detail:
 
