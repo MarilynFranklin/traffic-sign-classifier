@@ -88,17 +88,26 @@ My final model consisted of the following layers:
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Input         		| 32x32x3 RGB image   							| 
+| Input         		| 32x32x1 image   							| 
 | Convolution 5x5     	| 1x1 stride, valid padding, outputs 28x28x6 	|
 | RELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 14x14x6 				|
 | Convolution 5x5     	| 1x1 stride, valid padding, outputs 10x10x16 	|
 | RELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 5x5x16 				|
+| Flatten		| outputs 400        									|
 | Fully connected		| outputs 120        									|
 | Dropout		| .5        									|
 | RELU					|												|
+| Fully connected		| outputs 84        									|
+| Dropout		| .5        									|
+| RELU					|												|
 | Fully connected		| outputs 10        									|
+
+### Here is a graph of my network from Tensorboard:
+<p align="center">
+<img src="reflection_images/tensorboard-graph.png?raw=true" width="400">
+</p>
 
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
@@ -110,9 +119,29 @@ My final model results were:
 * validation set accuracy of **96.2%**
 * test set accuracy of **94.1%**
 
+**What was the first architecture that was tried and why was it chosen?**
+
 I chose LeNet-5 as a starting point for my model because it performs well for image classification with minimal preprocessing.
 
-During training, the validation accuracy stopped increasing at around 96%. This could probably be improved by lowering the learning rate and letting the model train longer. Since the test accuracy is a bit lower at 94%, I could also try adding a few more dropout layers to see if it would prevent overfitting.
+**What were some problems with the initial architecture?**
+
+The initial architecture did not exceed 93% accuracy.
+
+**How was the architecture adjusted and why was it adjusted?**
+
+I added two dropout layers. One after the first fully connected layer, and other after the second fully connected layer. Both dropout layers used a keep probability of .5. Adding a dropout layer helps to prevent overfitting by turning off a certain number of nodes during training forcing the network to learn redudant representations.
+
+While iterating, I attempted to add an inception module before the first fully connected layer. My validation accuracy was slightly lower, however. So, I removed it and stuck with LeNet-5 with two dropout layers.
+
+**Which parameters were tuned? How were they adjusted and why?**
+
+I increased the batch size from 128 to 256. Increasing the batch size allows the model to look at more examples before updating weights. This reduces noise while training, but means that the model will take a little longer to train.
+
+I also trained for 50 epochs.
+
+**What are some of the important design choices and why were they chosen?**
+
+LeNet-5 worked well as a starting point. I used this architecture since it was suggested for the project. Adding 2 dropout layers helped to prevent over fitting. I found that I didn't have to make too many changes to exceed 93% accuracy for this dataset.
 
 ### Test a Model on New Images
 
